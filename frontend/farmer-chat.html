@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Farmer Chat | AgriAI</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar__inner container">
+          <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand__mark">AgriAI</span>
+            <span class="brand__name">Multi-Modal Advisory</span>
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="login.html">Login</a>
+            <a class="nav__link" href="farmer-chat.html">Farmer Chat</a>
+            <a class="nav__link" href="officer-dashboard.html">Officer Dashboard</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="workspace" data-page="farmer-chat">
+          <aside class="sidebar card">
+            <div class="sidebar__header">
+              <div class="pill pill--green">Farmer</div>
+              <div class="muted">Chat workspace</div>
+            </div>
+
+            <div class="sidebar__body">
+              <div class="section-title">Quick prompts</div>
+              <div class="chip-group" role="list">
+                <button class="chip" type="button">Leaf spot on tomato</button>
+                <button class="chip" type="button">Yellowing leaves</button>
+                <button class="chip" type="button">Pest identification</button>
+                <button class="chip" type="button">Fertilizer guidance</button>
+              </div>
+
+              <div class="divider"></div>
+
+              <div class="section-title">Attachments</div>
+              <div class="muted">Attach an image and/or audio along with your question.</div>
+
+              <div class="actions actions--stack">
+                <button class="btn btn--ghost" type="button" id="imageBtn">Upload Image</button>
+                <button class="btn btn--ghost" type="button" id="audioBtn">Upload Audio</button>
+                <input class="is-hidden" id="imageInput" type="file" accept="image/*" />
+                <input class="is-hidden" id="audioInput" type="file" accept="audio/*" />
+                <div class="muted" id="attachmentStatus">No attachments selected.</div>
+              </div>
+            </div>
+
+            <div class="sidebar__footer">
+              <a class="btn btn--ghost btn--block" href="login.html?role=farmer">Switch account</a>
+            </div>
+          </aside>
+
+          <section class="chat card">
+            <header class="chat__header">
+              <div>
+                <div class="chat__title">Advisory Chat</div>
+                <div class="muted">Connected to <span class="code">http://127.0.0.1:8000</span></div>
+              </div>
+              <div class="chat__meta">
+                <div class="pill">Session: Draft</div>
+              </div>
+            </header>
+
+            <div class="banner banner--warning is-hidden" id="escalationBanner" role="status" aria-live="polite">
+              <div class="banner__title">Escalation required</div>
+              <div class="banner__body" id="escalationReason"></div>
+            </div>
+
+            <div class="chat__messages" id="chatMessages" aria-label="Chat messages">
+              <div class="bubble bubble--system">
+                <div class="bubble__title">System</div>
+                <div class="bubble__body">Share crop details, symptoms, and images for best results.</div>
+              </div>
+            </div>
+
+            <footer class="chat__composer">
+              <div class="alert alert--error is-hidden" id="chatError" role="alert" aria-live="polite"></div>
+
+              <form class="composer" id="chatForm">
+                <button class="btn btn--ghost" type="button" id="composerImageBtn" aria-label="Attach image">Image</button>
+                <button class="btn btn--ghost" type="button" id="composerAudioBtn" aria-label="Attach audio">Mic</button>
+
+                <label class="composer__field">
+                  <span class="sr-only">Message</span>
+                  <input class="input" id="chatInput" type="text" placeholder="Type your question…" />
+                </label>
+
+                <button class="btn btn--primary" id="sendBtn" type="submit">Send</button>
+              </form>
+
+              <div class="composer__hint muted" id="composerHint">You can send text, audio, image, or any combination.</div>
+            </footer>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="muted">AgriAI v3</div>
+          <div class="muted">Local backend: <span class="code">http://127.0.0.1:8000</span></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

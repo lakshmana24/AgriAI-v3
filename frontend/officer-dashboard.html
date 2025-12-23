@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Officer Dashboard | AgriAI</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar__inner container">
+          <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand__mark">AgriAI</span>
+            <span class="brand__name">Multi-Modal Advisory</span>
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="login.html">Login</a>
+            <a class="nav__link" href="farmer-chat.html">Farmer Chat</a>
+            <a class="nav__link" href="officer-dashboard.html">Officer Dashboard</a>
+          </nav>
+        </div>
+      </header>
+@@
+      <main class="container">
+        <section class="dashboard" data-page="officer-dashboard">
+          <header class="dashboard__header">
+            <div>
+              <div class="pill pill--blue">Officer</div>
+              <h1 class="h1">Dashboard</h1>
+              <p class="muted">Review escalations and send verified guidance back to farmers.</p>
+            </div>
+            <div class="dashboard__actions">
+              <button class="btn btn--ghost" type="button" id="refreshEscalationsBtn">Refresh</button>
+              <a class="btn btn--ghost" href="login.html">Switch account</a>
+            </div>
+          </header>
+
+          <div class="alert alert--error is-hidden" id="officerBlocked" role="alert" aria-live="polite"></div>
+          <div class="alert alert--error is-hidden" id="officerDashboardError" role="alert" aria-live="polite"></div>
+          <div class="note is-hidden" id="officerDashboardInfo" role="status" aria-live="polite"></div>
+
+          <div class="grid grid--3">
+            <div class="card">
+              <div class="stat">
+                <div class="stat__label">Pending Escalations</div>
+                <div class="stat__value" id="pendingEscalations">—</div>
+                <div class="muted">From <span class="code">/api/v1/officer/escalations</span></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stat">
+                <div class="stat__label">Resolved (session)</div>
+                <div class="stat__value" id="resolvedEscalations">0</div>
+                <div class="muted">Tracked in this UI session</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="stat">
+                <div class="stat__label">Backend</div>
+                <div class="stat__value">Local</div>
+                <div class="muted"><span class="code">http://127.0.0.1:8000</span></div>
+              </div>
+            </div>
+          </div>
+
+          <section class="card" aria-label="Escalated cases">
+            <div class="card__header">
+              <h2 class="h2">Escalated Cases</h2>
+              <div class="muted">GET <span class="code">/api/v1/officer/escalations</span></div>
+            </div>
+            <div class="case-list" id="escalationsList"></div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="muted">AgriAI v3</div>
+          <div class="muted">Local backend: <span class="code">http://127.0.0.1:8000</span></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

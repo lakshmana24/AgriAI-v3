@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Based Multi-Modal Agricultural Advisory System</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar__inner container">
+          <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand__mark">AgriAI</span>
+            <span class="brand__name">Multi-Modal Advisory</span>
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="login.html">Login</a>
+            <a class="nav__link" href="farmer-chat.html">Farmer Chat</a>
+            <a class="nav__link" href="officer-dashboard.html">Officer Dashboard</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="hero">
+          <div class="hero__content">
+            <h1 class="h1">AI-Based Multi-Modal Agricultural Advisory System</h1>
+            <p class="lead">
+              A clean frontend for farmers and officers to collaborate on crop guidance using text and media.
+            </p>
+
+            <div class="card-grid">
+              <article class="card">
+                <h2 class="h2">Farmer</h2>
+                <p class="muted">Ask questions, share field observations, and receive guidance.</p>
+                <div class="actions">
+                  <a class="btn btn--primary" href="login.html?role=farmer">Continue as Farmer</a>
+                  <a class="btn btn--ghost" href="farmer-chat.html">View Chat Layout</a>
+                </div>
+              </article>
+
+              <article class="card">
+                <h2 class="h2">Officer</h2>
+                <p class="muted">Review requests, monitor trends, and prepare responses.</p>
+                <div class="actions">
+                  <a class="btn btn--primary" href="login.html?role=officer">Continue as Officer</a>
+                  <a class="btn btn--ghost" href="officer-dashboard.html">View Dashboard Layout</a>
+                </div>
+              </article>
+            </div>
+
+            <div class="note">
+              <div class="note__title">Backend</div>
+              <div class="note__body">
+                Base URL: <span class="code">http://127.0.0.1:8000</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="muted">AgriAI v3</div>
+          <div class="muted">Local backend: <span class="code">http://127.0.0.1:8000</span></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

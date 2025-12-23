@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | AgriAI</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="topbar__inner container">
+          <a class="brand" href="index.html" aria-label="Home">
+            <span class="brand__mark">AgriAI</span>
+            <span class="brand__name">Multi-Modal Advisory</span>
+          </a>
+          <nav class="nav" aria-label="Primary">
+            <a class="nav__link" href="login.html">Login</a>
+            <a class="nav__link" href="farmer-chat.html">Farmer Chat</a>
+            <a class="nav__link" href="officer-dashboard.html">Officer Dashboard</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="container">
+        <section class="auth">
+          <div class="auth__panel card">
+            <div class="auth__header">
+              <h1 class="h1">Sign in</h1>
+              <p class="muted">Sign in to continue. Your role will be determined by the backend.</p>
+            </div>
+
+            <form class="form" data-page="login" id="loginForm">
+              <label class="field">
+                <span class="field__label">Username</span>
+                <input class="input" name="username" id="usernameInput" type="text" autocomplete="username" placeholder="Enter your username" required />
+              </label>
+
+              <label class="field">
+                <span class="field__label">Password</span>
+                <input class="input" name="password" id="passwordInput" type="password" autocomplete="current-password" placeholder="Enter your password" required />
+              </label>
+
+              <div class="alert alert--error is-hidden" id="loginError" role="alert" aria-live="polite"></div>
+
+              <button class="btn btn--primary btn--block" id="loginBtn" type="submit">Sign in</button>
+
+              <div class="auth__footer">
+                <a class="link" href="index.html">Back to Home</a>
+                <span class="muted">Backend: <span class="code">http://127.0.0.1:8000</span></span>
+              </div>
+            </form>
+          </div>
+
+          <aside class="auth__aside">
+            <div class="card card--soft">
+              <h2 class="h2">What you can do</h2>
+              <div class="stack">
+                <div class="list-item">
+                  <div class="list-item__title">Farmer Chat</div>
+                  <div class="muted">Ask crop questions and share images for advisory.</div>
+                </div>
+                <div class="list-item">
+                  <div class="list-item__title">Officer Dashboard</div>
+                  <div class="muted">View incoming requests and manage responses.</div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__inner">
+          <div class="muted">AgriAI v3</div>
+          <div class="muted">Local backend: <span class="code">http://127.0.0.1:8000</span></div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
